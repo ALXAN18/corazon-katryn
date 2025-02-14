@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #f3e7e9;
+  font-family: 'Dancing Script', cursive;
+  transition: background 2s ease;
+}
+
+.titulo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: black;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  z-index: 20;
+}
+
+/* ===== CORRECCIÓN DE ELEMENTOS FLOTANTES ===== */
+.flotantes-fondo span {
+  position: absolute;
+  display: block;
+  animation: animarFlotantes 10s linear infinite paused;
+  bottom: -50px;
+  opacity: 1;
+  font-size: 28px;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/* Formas reales con emojis */
+.flotantes-fondo span.corazon::before {
+  content: "❤️";
+  display: block;
+}
+
+.flotantes-fondo span.estrella::before {
+  content: "⭐";
+  display: block;
+}
+
+@keyframes animarFlotantes {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ===== CORRECCIÓN ANIMACIÓN CORAZÓN ===== */
+.heart {
+  width: 100px;
+  height: 90px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background-color: red;
+  animation: latido 2s infinite paused;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 100px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: inherit;
+  position: absolute;
+}
+
+.heart::before { top: -45px; left: 0; }
+.heart::after { top: 0; left: 45px; }
+
+@keyframes latido {
+  0% { transform: translate(-50%, -50%) rotate(-45deg) scale(1); }
+  50% { transform: translate(-50%, -50%) rotate(-45deg) scale(1.1); }
+  100% { transform: translate(-50%, -50%) rotate(-45deg) scale(1); }
+}
+
+/* ===== CORRECCIÓN ROSA CORREDORA ===== */
+.rosa {
+  position: absolute;
+  bottom: 15%;
+  left: -100px;
+  font-size: 60px;
+  animation: correr 12s linear infinite paused;
+  z-index: 10;
+  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.8));
+}
+
+@keyframes correr {
+  0% { left: -100px; }
+  100% { left: 100%; }
+}
+
+/* ===== ELEMENTOS SIN CAMBIOS ===== */
+.mensaje {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  color: black;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 10;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+button {
+  position: absolute;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  z-index: 20;
+}
+
+#control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+button:hover { background-color: rgba(255, 255, 255, 1); }
+
+#adelantar, #atrasar {
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 10px;
+}
+
+#adelantar { left: 60%; }
+#atrasar { left: 40%; }
+
+.te-amo {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  font-size: 20px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 15;
+}
+
+.contador {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  z-index: 15;
+}
+
+.frase-motivadora {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 12px 24px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  transition: opacity 0.5s;
+  z-index: 15;
+}
